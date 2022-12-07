@@ -4,8 +4,7 @@ fn part1(result: &Vec<u32>) -> u32 {
     result.iter().fold(u32::MIN, |a, b| a.max(*b))
 }
 
-fn part2(result: &Vec<u32>) -> u32 {
-    let mut result = result.clone();
+fn part2(result: &mut Vec<u32>) -> u32 {
     result.sort();
     result.iter().rev().take(3).sum::<u32>()
 }
@@ -27,7 +26,7 @@ fn main() {
     });
 
     let part1 = part1(&result);
-    let part2 = part2(&result);
+    let part2 = part2(&mut result);
 
     println!("Part 1: {}", part1);
     println!("Part 2: {}", part2);
